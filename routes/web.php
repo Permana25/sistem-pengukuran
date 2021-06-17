@@ -49,6 +49,8 @@ Route::group(['middleware' =>['auth','checkRole:1']],function(){
     //route kuisioner admin
     Route::get('/admin/kuisioner','KuisionerAdminController@index');
 
+    Route::post('/kuisioner/store','KuisionerAdminController@store');
+
     //route history admin
     Route::get('/history','HistoryAdminController@index');
 

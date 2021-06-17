@@ -22,5 +22,24 @@
 @endsection
 
 @section('content')
-    <h2>Kusioner</h2>
+    <h2>Kusioner</h2><br/>
+    <form action="/kuisioner/store" method="post">
+		{{ csrf_field() }}
+		Pertanyaan <input type="text" name="pertanyaan" required="required"> <br/>
+        <br/>
+		<input type="submit" value="Tambah Data">
+	</form>
+    <hr>
+    <table border="0">
+		<tr>
+			<th>Id</th>
+			<th>Pertanyaan</th>
+		</tr>
+		@foreach($pertanyaan as $p)
+		<tr>
+			<td>{{ $p->id_pertanyaan }}</td>
+			<td>{{ $p->pertanyaan }}</td>
+		</tr>
+		@endforeach
+	</table>
 @endsection
